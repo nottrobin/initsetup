@@ -16,6 +16,7 @@ INITDIR=`dirname "$SCRIPTPATH"`;
 PARENTDIR=`dirname "$INITDIR"`;
 LIBDIR=$PARENTDIR/lib;
 BINDIR=$PARENTDIR/bin;
+CONFIGDIR=$PARENTDIR/config;
 
 PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin;
 NAME=nginx;
@@ -23,8 +24,8 @@ DESC=nginx;
 DAEMON=$BINDIR/$NAME;
 
 # Include nginx defaults if available
-if [ -f /etc/default/nginx ]; then
-	. /etc/default/nginx
+if [ -f $CONFIGDIR/$NAME ]; then
+	. $CONFIGDIR/$NAME
 fi
 
 test -x $DAEMON || exit 0

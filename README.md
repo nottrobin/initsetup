@@ -29,9 +29,17 @@ ln -s /home/robin/Projects/initsetup/debian/init/noderw /etc/init.d/.
 
 ### Dependencies
 
-The one problematic init script is `node`, which has a dependency on `node_server.js` from my `web-controllers` project existing at `/var/web-controllers/node_server.js`.
+`php` will need to be installed for `phpfcgi` to work.
+
+#### Node
+
+`node` has a dependency on `node_server.js` from my `web-controllers` project existing at `/var/web-controllers/node_server.js`.
 
 ```
 git clone git://github.com/nottrobin/web-controllers.git /var/web-controllers
 ```
+
+#### Nginx
+
+Nginx server will try to read its configuration out of `/etc/nginx/nginx.conf`.
 
