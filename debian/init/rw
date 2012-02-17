@@ -1,0 +1,54 @@
+#! /bin/sh
+### BEGIN INIT INFO
+# Provides:          php-fastcgi
+# Required-Start:    $all
+# Required-Stop:     $all
+# Default-Start:     2 3 4 5
+# Default-Stop:      0 1 6
+# Short-Description: Start and stop php-cgi in external FASTCGI mode
+# Description:       Start and stop php-cgi in external FASTCGI mode
+### END INIT INFO
+
+# Author: Kurt Zankl <kz@xon.uni.cc>
+
+# Do NOT "set -e"
+
+# Setup directory locations
+SCRIPTPATH=$(readlink -f $0);
+INITDIR=`dirname "$SCRIPTPATH"`;
+PARENTDIR=`dirname "$INITDIR"`;
+LIBDIR=$PARENTDIR/lib;
+BINDIR=$PARENTDIR/bin;
+
+NAME=rw
+SERVERNAME=nginx
+ENGINENAME=phpfcgi
+SCRIPTNAME=$INITDIR/$NAME
+SERVERINIT=$INITDIR/$SERVERNAME
+ENGINEINIT=$INITDIR/$ENGINENAME
+
+case "$1" in
+  start)
+        $SERVERINIT status > /dev/null || $SERVERINIT start
+        $ENGINEINIT status > /dev/null || $ENGINEINIT start
+        ;;
+  stop)
+        $SERVERINIT status > /dev/null && $SERVERINIT stop
+        $ENGINEINIT status > /dev/null && $ENGINEINIT stop
+        ;;
+  status)
+        $SERVERINIT status
+        $ENGINEINIT status
+        ;;
+  restart|reload|force-reload)
+        $SERVERINIT status > /dev/null && $SERVERINIT stop
+        $ENGINEINIT status > /dev/null &&$ENGINEINIT stop
+        $SERVERINIT status > /dev/null || $SERVERINIT start
+        $ENGINEINIT status > /dev/null || $ENGINEINIT start
+        ;;
+  *)
+        echo "Usage: $SCRIPTNAME {start|stop|restart|reload|force-reload}" >&2
+        exit 3
+        ;;
+esac
+
