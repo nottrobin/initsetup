@@ -19,7 +19,7 @@ Usage
 
 To set-up this all you have to do is create symlinks from `/etc/init.d/` to the `<linux-flavour>/init` folder.
 
-The one problematic init script is `node`, which has a dependency on `node_server.js` from my `web-controllers` project existing at `/var/web-controllers/`.
+The one problematic init script is `node`, which has a dependency on `node_server.js` from my `web-controllers` project existing at `/var/web-controllers/node_server.js`.
 
 ```
 git clone git://github.com/nottrobin/web-controllers.git /var/web-controllers
