@@ -3,11 +3,11 @@ Init scripts
 
 These are my personal init scripts that I use in my systems for:
 
-- nginx
-- phpfcgi - php fastcgi proxy
-- node - node.js proxy
-- rw - start services needed for my website
-- noderw - start services needed for the node.js version of my website
+- `nginx` - server
+- `phpfcgi` - php fastcgi proxy
+- `node` - node.js proxy
+- `rw` - start services needed for my website
+- `noderw` - start services needed for the node.js version of my website
 
 I've broken these down by linux flavour (I only use two flavours):
 
@@ -17,7 +17,7 @@ I've broken these down by linux flavour (I only use two flavours):
 Usage
 --
 
-To set-up this all you have to do is create symlinks from `/etc/init.d/` to the `<linux-flavour>/init` folder.
+To set this up all you have to do is create symlinks from `/etc/init.d/` to the `<linux-flavour>/init` folder.
 
 ```
 ln -s /home/robin/Projects/initsetup/debian/init/nginx /etc/init.d/.
