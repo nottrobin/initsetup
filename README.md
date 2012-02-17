@@ -19,6 +19,16 @@ Usage
 
 To set-up this all you have to do is create symlinks from `/etc/init.d/` to the `<linux-flavour>/init` folder.
 
+```
+ln -s /home/robin/Projects/initsetup/debian/init/nginx /etc/init.d/.
+ln -s /home/robin/Projects/initsetup/debian/init/node /etc/init.d/.
+ln -s /home/robin/Projects/initsetup/debian/init/phpfcgi /etc/init.d/.
+ln -s /home/robin/Projects/initsetup/debian/init/rw /etc/init.d/.
+ln -s /home/robin/Projects/initsetup/debian/init/noderw /etc/init.d/.
+```
+
+### Dependencies
+
 The one problematic init script is `node`, which has a dependency on `node_server.js` from my `web-controllers` project existing at `/var/web-controllers/node_server.js`.
 
 ```
