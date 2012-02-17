@@ -15,7 +15,7 @@ SCRIPTPATH=$(readlink -f $0);
 INITDIR=`dirname "$SCRIPTPATH"`;
 PARENTDIR=`dirname "$INITDIR"`;
 LIBDIR=$PARENTDIR/lib;
-BINDIR=$PARENTDIR/bin;
+BINDIR=user/sbin;
 CONFIGDIR=$PARENTDIR/config;
 
 PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin;

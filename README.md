@@ -26,8 +26,6 @@ sudo ln -s $INITDIR/node /etc/init.d/.
 sudo ln -s $INITDIR/phpfcgi /etc/init.d/.
 sudo ln -s $INITDIR/rw /etc/init.d/.
 sudo ln -s $INITDIR/noderw /etc/init.d/.
-ln -s $INITDIR/rw $HOME/bin/rw
-ln -s $INITDIR/noderw $HOME/bin/nrw
 ```
 
 ### Dependencies
