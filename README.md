@@ -34,7 +34,7 @@ ln -s $INITDIR/noderw $HOME/bin/nrw
 
 `php` will need to be installed for `phpfcgi` to work.
 
-#### Node
+**Node**
 
 `node` has a dependency on `node_server.js` from my `web-controllers` project existing at `/var/web-controllers/node_server.js`.
 
@@ -42,7 +42,7 @@ ln -s $INITDIR/noderw $HOME/bin/nrw
 git clone git://github.com/nottrobin/web-controllers.git /var/web-controllers
 ```
 
-#### Nginx
+**Nginx**
 
 Nginx server will try to read its configuration out of `/etc/nginx/nginx.conf`.
 
