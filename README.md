@@ -20,11 +20,14 @@ Usage
 To set this up all you have to do is create symlinks from `/etc/init.d/` to the `<linux-flavour>/init` folder.
 
 ```
-ln -s /home/robin/Projects/initsetup/debian/init/nginx /etc/init.d/.
-ln -s /home/robin/Projects/initsetup/debian/init/node /etc/init.d/.
-ln -s /home/robin/Projects/initsetup/debian/init/phpfcgi /etc/init.d/.
-ln -s /home/robin/Projects/initsetup/debian/init/rw /etc/init.d/.
-ln -s /home/robin/Projects/initsetup/debian/init/noderw /etc/init.d/.
+INITDIR=/home/robin/Projects/initsetup/debian/init;
+sudo ln -s $INITDIR/nginx /etc/init.d/.
+sudo ln -s $INITDIR/node /etc/init.d/.
+sudo ln -s $INITDIR/phpfcgi /etc/init.d/.
+sudo ln -s $INITDIR/rw /etc/init.d/.
+sudo ln -s $INITDIR/noderw /etc/init.d/.
+ln -s $INITDIR/rw $HOME/bin/rw
+ln -s $INITDIR/noderw $HOME/bin/nrw
 ```
 
 ### Dependencies
